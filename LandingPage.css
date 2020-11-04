@@ -1,2 +1,21 @@
-#time { font-size: 100px; }
-#greeting {}
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;  
+}
+body {
+    font-family: 'Quicksand', sans-serif;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+}
+#time {
+    font-size: 10vw;
+}
+#greeting {
+    font-size: 4vw;
+    opacity: 0.8;
+}
