@@ -26,6 +26,18 @@ body {
     font-size: 2vw;
     margin-top: 1vw;
 }
+#weather {
+    background-color: white;
+    width: 10%;
+    height: 10vh;
+    position: absolute;
+    top: 1%;
+    right: 1vh;
+}
+#weatherImg {
+    position: absolute;
+    right: 1vh;
+}
 .name {
 opacity: 0.6;
 }
