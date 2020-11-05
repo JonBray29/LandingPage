@@ -12,8 +12,33 @@ $(function(){
     });
     //Set the greeting dependant on time of day
     var greeting = getGreeting();
-    $("#greeting").html(greeting);
+    if(localStorage.name != undefined){
+        $("#greeting").html(greeting + ", " + "<span id=\"name\" contentEditable=\"true\">" + localStorage.getItem("name") + "</span>");
+    }
+    else{
+        $("#greeting").html(greeting + ", " + "<span id=\"name\" class=\"name\" contentEditable=\"true\">Enter your name</span>");
+    }
+    //Listen for click on name
+    $("#name").click(function(){
+        if($("#name").html() == "Enter your name"){
+            $("#name").html(" ")
+        }
+    }); 
+    //On unfocus either update name in key and remove class or input enter your name
+    $("#name").focusout(function(){
+        if($("#name").html() != 0){
+            localStorage.setItem("name", $("#name").html());
+            $("#name").removeClass(name);
+        }
+        else if($("#name").html() == 0 && localStorage.getItem("name") != undefined){
+            $("#name").html(localStorage.getItem("name"));
+        }
+        else if($("#name").html() == 0 && localStorage.getItem("name") == undefined){
+            $("#name").html("Enter your name");
+        }
+    });
 })
+
 //Get image ID dependant on the time of day
 function getIdForTime(){
     switch(new Date().getHours()){
