@@ -28,7 +28,7 @@ body {
 }
 #weather {
     display: flex;
-    width: 10%;
+    width: 15%;
     height: 10vh;
     position: absolute;
     top: 1%;
@@ -39,7 +39,7 @@ body {
     right: 1vh;
 }
 #temp {
-    font-size: 2vw;
+    font-size: 4vw;
 }
 .name {
 opacity: 0.6;

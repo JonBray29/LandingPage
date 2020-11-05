@@ -7,12 +7,12 @@ $(function(){
         $("#body").css({"background-image": "url(" + data.hits[0].largeImageURL + ")"});
     });
     //Call time function
-    //showTime();
+    showTime();
     //Get weather
     var city = "plymouth";
     $.get("https://api.weatherapi.com/v1/current.json?key=4947a4d458c04be0811153820200511&q=" + city, function(weather){
         $("#weatherImg").prop("src", getWeatherIcon(weather.current.condition.code));
-        $("#temp").html(weather.current.temp_c + "°")
+        $("#temp").html(weather.current.temp_c + "&degC")
     });
     //Get and set quote
     $.get("https://api.quotable.io/random", function(quotes){
