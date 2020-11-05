@@ -11,7 +11,6 @@ $(function(){
     //Get weather
     var city = "plymouth";
     $.get("https://api.weatherapi.com/v1/current.json?key=4947a4d458c04be0811153820200511&q=" + city, function(weather){
-        console.log(getWeatherIcon(weather.current.condition.code));
         $("#weatherImg").prop("src", getWeatherIcon(weather.current.condition.code));
     });
     //Get and set quote
