@@ -28,7 +28,7 @@ body {
 }
 #weather {
     display: flex;
-    width: 15%;
+    width: 13%;
     height: 10vh;
     position: absolute;
     top: 1%;
@@ -37,6 +37,9 @@ body {
 #weatherImg {
     position: absolute;
     right: 1vh;
+    width: 40%;
+    height: 9vh;
+    object-fit: cover;
 }
 #temp {
     font-size: 4vw;
