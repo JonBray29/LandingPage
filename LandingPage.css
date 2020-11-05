@@ -27,6 +27,7 @@ body {
     margin-top: 1vw;
 }
 #weather {
+    display: flex;
     width: 10%;
     height: 10vh;
     position: absolute;
@@ -36,6 +37,9 @@ body {
 #weatherImg {
     position: absolute;
     right: 1vh;
+}
+#temp {
+    font-size: 2vw;
 }
 .name {
 opacity: 0.6;
