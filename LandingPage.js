@@ -26,14 +26,14 @@ $(function(){
     }); 
     //On unfocus either update name in key and remove class or input enter your name
     $("#name").focusout(function(){
-        if($("#name").html() != 0){
+        if($.trim($("#name").text()) != ""){
             localStorage.setItem("name", $("#name").html());
-            $("#name").removeClass(name);
+            $("#name").removeClass("name");
         }
-        else if($("#name").html() == 0 && localStorage.getItem("name") != undefined){
+        else if($.trim($("#name").text()) == "" && localStorage.getItem("name") != undefined){
             $("#name").html(localStorage.getItem("name"));
         }
-        else if($("#name").html() == 0 && localStorage.getItem("name") == undefined){
+        else if($.trim($("#name").text()) == "" && localStorage.getItem("name") == undefined){
             $("#name").html("Enter your name");
         }
     });
