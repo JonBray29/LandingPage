@@ -6,6 +6,12 @@ $(function(){
     $.get(url, function(data){
         $("#body").css({"background-image": "url(" + data.hits[0].largeImageURL + ")"});
     });
+    //Call time function
+    showTime();
+    //Get weather
+    $.get("https://api.weatherapi.com/v1/current.json?key=4947a4d458c04be0811153820200511&q=auto:ip", function(weather){
+        console.log(weather.current.temp_c);
+    });
     //Get and set quote
     $.get("https://api.quotable.io/random", function(quotes){
         $("#quote").html(quotes.content + " - " + quotes.author);
@@ -92,5 +98,13 @@ function getGreeting(){
     else{
         return "Good Night";
     }
+}
+//Get and show time
+function showTime(){
+    var time = new Date().toLocaleTimeString();
+
+    $("#time").html(time);
+
+    setTimeout(showTime, 1000);
 }
 
