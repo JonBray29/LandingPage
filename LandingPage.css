@@ -29,16 +29,15 @@ body {
 #weatherImg {
     position: absolute;
     right: 1vw;
-    top: 2.75%;
-    width: 5%;
-    height: 8vh;
-    object-fit: cover;
+    top: 1vh;
+    width: 5vw;
+    object-fit: scale-down;
 }
 #temp {
     position: absolute;
-    font-size: 6vh;
-    top: 2.75%;
-    right: 7vw;
+    font-size: 4vw;
+    top: 1vh;
+    right: 6vw;
 }
 .name {
 opacity: 0.6;
