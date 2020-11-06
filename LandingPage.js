@@ -79,7 +79,7 @@ function getIdForTime(){
         case 22:
             return 1979546;
         case 23:
-        case 24:
+        case 0:
         case 1:
             return 3194001;
     }

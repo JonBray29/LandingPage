@@ -26,23 +26,19 @@ body {
     font-size: 2vw;
     margin-top: 1vw;
 }
-#weather {
-    display: flex;
-    width: 13%;
-    height: 10vh;
-    position: absolute;
-    top: 1%;
-    right: 1vh;
-}
 #weatherImg {
     position: absolute;
-    right: 1vh;
-    width: 40%;
-    height: 9vh;
+    right: 1vw;
+    top: 2.75%;
+    width: 5%;
+    height: 8vh;
     object-fit: cover;
 }
 #temp {
-    font-size: 4vw;
+    position: absolute;
+    font-size: 6vh;
+    top: 2.75%;
+    right: 7vw;
 }
 .name {
 opacity: 0.6;
