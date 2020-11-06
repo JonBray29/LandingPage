@@ -9,10 +9,13 @@ $(function(){
     //Call time function
     showTime();
     //Get weather
-    var city = "plymouth";
-    $.get("https://api.weatherapi.com/v1/current.json?key=4947a4d458c04be0811153820200511&q=" + city, function(weather){
+    navigator.geolocation.getCurrentPosition(function(data){
+        let lat = data.coords.latitude;
+        let lon = data.coords.longitude;
+        $.get("https://api.weatherapi.com/v1/current.json?key=4947a4d458c04be0811153820200511&q=" + lat + "," + lon, function(weather){
         $("#weatherImg").prop("src", getWeatherIcon(weather.current.condition.code, "white"));
         $("#temp").html(weather.current.temp_c + "&deg")
+    });
     });
     //Get and set quote
     $.get("https://api.quotable.io/random", function(quotes){
@@ -208,4 +211,13 @@ function getWeatherIcon(code, colour){
         case 1264:
             return "images/" + colour + "/icons8-hail-100.png";
     }
+}
+//Successful location
+function success(location){
+    let lat = location.coords.latitude;
+    let lon = location.coords.longitude;
+    $.get("https://api.weatherapi.com/v1/current.json?key=4947a4d458c04be0811153820200511&q=" + lat + "," + lon, function(weather){
+        $("#weatherImg").prop("src", getWeatherIcon(weather.current.condition.code, "white"));
+        $("#temp").html(weather.current.temp_c + "&deg")
+    });
 }
